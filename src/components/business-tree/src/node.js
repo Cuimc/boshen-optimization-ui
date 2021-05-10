@@ -65,7 +65,7 @@ export default {
           <div class={['item-content', node._active ? 'tree-item-active' : '']}>
             {
               node._load === false
-                ? <i class="el-icon-loading icon"/>
+                ? <Icon type="ios-sync" class="icon-load"/>
                 : !renderTreeNode ? node.name : renderTreeNode(node)
             }
           </div>
