@@ -1,0 +1,82 @@
+.motion-common() {
+    animation-duration: @animation-time;
+    animation-fill-mode: both;
+    transform-origin: 0 0;
+}
+
+.make-motion(@className, @keyframeName) {
+    .@{className}-enter-active {
+        .motion-common();
+        animation-play-state: paused;
+    }
+    .@{className}-leave-active {
+        .motion-common();
+        animation-play-state: paused;
+    }
+    .@{className}-enter-active {
+        animation-name: ~"@{keyframeName}In";
+        animation-play-state: running;
+    }
+    .@{className}-leave-active {
+        animation-name: ~"@{keyframeName}Out";
+        animation-play-state: running;
+    }
+}
+
+
+.move-motion(@className, @keyframeName) {
+    .make-motion(@className, @keyframeName);
+    .@{className}-enter-active {
+        animation-timing-function: @ease-in-out;
+    }
+    .@{className}-leave-active {
+        animation-timing-function: @ease-in-out;
+    }
+}
+
+.move-motion(transition-drop, shTransitionDrop);
+.move-motion(scale-wrap, shScaleWrap);
+
+@keyframes shTransitionDropIn {
+    0% {
+        opacity: 0;
+        transform: scaleY(0.8);
+    }
+    100% {
+        opacity: 1;
+        transform: scaleY(1);
+    }
+}
+
+@keyframes shTransitionDropOut {
+    0% {
+        opacity: 1;
+        transform: scaleY(1);
+    }
+    100% {
+        opacity: 0;
+        transform: scaleY(0.8);
+    }
+}
+
+@keyframes shScaleWrapIn {
+    0% {
+        transform: scale(0);
+        transform-origin: calc(100% - 20px) 0;
+    }
+    100% {
+        transform: scale(1);
+        transform-origin: calc(100% - 20px) 0;
+    }
+}
+
+@keyframes shScaleWrapOut {
+    0% {
+        transform: scale(1);
+        transform-origin: calc(100% - 20px) 0;
+    }
+    100% {
+        transform: scale(0);
+        transform-origin: calc(100% - 20px) 0;
+    }
+}

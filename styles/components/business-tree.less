@@ -1,0 +1,47 @@
+/**custom**/
+
+@import "../animation/rotate.less";
+
+@tree-prefix-cls: ~"@{css-prefix}tree";
+
+.@{tree-prefix-cls} {
+  user-select: none;
+  .tree-wrap {
+    margin-left: 20px;
+  }
+  .tree-item {
+    min-width: 152px;
+    width: 100%;
+    min-height: 30px;
+    line-height: 30px;
+    // overflow: hidden;
+    background: @base-background;
+    .item-content {
+      padding-left: 6px;
+      min-width: 100px;
+      display: inline-block;
+      vertical-align: middle;
+      &-wrap {
+        .icon {
+          display: inline-block;
+          vertical-align: middle;
+          width: 34px;
+          text-align: center;
+          height: 100%;
+          color: #b7beca;
+          
+        }
+        .iconfont {
+          cursor: pointer;
+        }
+      }
+    }
+    &-active {
+      background: #f1f3f5;
+    }
+  }
+  // .first-item {
+  //   margin-left: 0;
+  // }
+  // .no-data-wrap {};
+}
