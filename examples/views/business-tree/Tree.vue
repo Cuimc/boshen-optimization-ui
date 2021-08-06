@@ -221,9 +221,9 @@ export default {
       console.log('dropNode', index, parentNode, targetNode, callback)
       callback(index, targetNode)
     },
-    renderTreeNode (node) {
-      // console.log(node.name)
-      return <div>{node.name}</div>
+    renderTreeNode (node, h) {
+      // return <div>{node.name}</div>
+      return h('div', node.name)
     }
   }
 }

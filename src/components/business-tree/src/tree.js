@@ -12,8 +12,8 @@
  */
 
 import { deepCopy } from '../../../utils/assist'
-// import Node from './Node.vue'
-import Node from './node'
+import Node from './Node.vue'
+// import Node from './node'
 
 // const treeData = [
 //   {
