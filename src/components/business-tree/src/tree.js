@@ -12,7 +12,7 @@
  */
 
 import { deepCopy } from '../../../utils/assist'
-import Render from './render'
+// import Node from './Node.vue'
 import Node from './node'
 
 // const treeData = [
@@ -38,8 +38,7 @@ import Node from './node'
 export default {
   name: 'BusinessTree',
   components: {
-    Node,
-    Render
+    Node
   },
   provide () {
     return {

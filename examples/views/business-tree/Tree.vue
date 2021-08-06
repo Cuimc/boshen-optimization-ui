@@ -222,8 +222,8 @@ export default {
       callback(index, targetNode)
     },
     renderTreeNode (node) {
-      // console.log(node)
-      return node.name
+      // console.log(node.name)
+      return <div>{node.name}</div>
     }
   }
 }
