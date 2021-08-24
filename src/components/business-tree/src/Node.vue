@@ -15,7 +15,7 @@
         @on-change="checked"
         :indeterminate="node._halfelEction" />
       <div :class="['item-content', node._active ? 'tree-item-active' : '']">
-        <Icon v-if="node._load === false" type="icon-loading" class="icon-load" />
+        <Icon v-if="node._load === false" type="ios-sync" class="icon-load" />
         <span v-else-if="!renderTreeNode">
           <!-- 利用一个函数式组件传递renderTreeNode进行渲染 -->
           {{node.name}}
